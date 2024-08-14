@@ -1,0 +1,136 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout
+  title="About | Ivan Trajanovski"
+  description="About Ivan Trajanovski Lorem Ipsum"
+>
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <Hero
+        title="About"
+        tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+      >
+        <!-- <img
+          width="1553"
+          height="873"
+          src="/assets/at-work.jpg"
+          alt="Ivan Trajanovski at work with a colleague"
+        /> -->
+      </Hero>
+
+      <section>
+        <h2 class="section-title">Background</h2>
+        <div class="content">
+          <p>
+            I've always had a knack for figuring out how things work. As a kid,
+            I was always taking stuff apart to get a peek inside. That curiosity
+            is what led me to tech and the joy of creating. It's a feeling I'll
+            never forget.
+          </p>
+          <p>
+            I actually started out in data science, but something kept pulling
+            me towards building things people could directly interact with.
+            There's something special about creating something that has a
+            real-world impact. Studying abroad really broadened my horizons and
+            fueled that passion. Ever since then, I've loved bringing my tech
+            skills to life in a more tangible way.
+          </p>
+          <p>
+            My favorite thing to build is beautiful, user-friendly websites and
+            apps. There's a real thrill in combining my design sense with the
+            technical side to create something people enjoy using. It's what
+            drives me to do my best work.
+          </p>
+          <p>
+            Right now, I'm ready to dive into freelance projects and help bring
+            new ideas to life! I'm great at building apps that work seamlessly
+            across devices. If you're looking for someone who blends technical
+            skills with a focus on great design, let's connect! When I'm not
+            coding, you'll probably find me running, sweating it out with
+            calisthenics, yelling at the TV during a football game, or just
+            soaking up some nature.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Education</h2>
+        <div class="content">
+          <p>University of Pecs, Hungary</p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Skills</h2>
+        <div class="content">
+          <p>Mobile Developer</p>
+          <p>Web Developer</p>
+          <p>UI/UX Designer</p>
+        </div>
+      </section>
+    </main>
+
+    <ContactCTA />
+  </div>
+
+  <style>
+    .about {
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+
+    img {
+      margin-top: 1.5rem;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      color: var(--gray-200);
+    }
+
+    .section-title {
+      grid-column-start: 1;
+      font-size: var(--text-xl);
+      color: var(--gray-0);
+    }
+
+    .content {
+      grid-column: 2 / 4;
+    }
+
+    .content :global(a) {
+      text-decoration: 1px solid underline transparent;
+      text-underline-offset: 0.25em;
+      transition: text-decoration-color var(--theme-transition);
+    }
+
+    .content :global(a:hover),
+    .content :global(a:focus) {
+      text-decoration-color: currentColor;
+    }
+
+    @media (min-width: 50em) {
+      .about {
+        display: grid;
+        grid-template-columns: 1fr 60% 1fr;
+      }
+
+      .about > :global(:first-child) {
+        grid-column-start: 2;
+      }
+
+      section {
+        display: contents;
+        font-size: var(--text-lg);
+      }
+    }
+  </style>
+</BaseLayout>
