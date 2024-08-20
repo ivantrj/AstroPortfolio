@@ -5,20 +5,17 @@ import Icon from "./Icon.astro";
 <section class="box services">
   <div class="stack gap-2 lg:gap-4">
     <Icon icon="code" color="var(--accent-regular)" size="2.5rem" gradient />
-    <h2>
-      <a href="#contact-cta">Mobile App Development</a>
-    </h2>
-    <p>
-      Creating user-friendly mobile applications that work seamlessly across
-      devices.
+    <h2>Mobile App Development</h2>
+    <p class="link">
+      I want a mobile app <Icon icon="arrow-right" size="1em" />
     </p>
   </div>
   <div class="stack gap-2 lg:gap-4">
     <Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
-    <h2>
-      <a href="#contact-cta">Website Development</a>
-    </h2>
-    <p>Building responsive and engaging websites tailored to your needs.</p>
+    <h2>Website Development</h2>
+    <p class="link">
+      I want a website <Icon icon="arrow-right" size="1em" />
+    </p>
   </div>
   <div class="stack gap-2 lg:gap-4">
     <Icon
@@ -27,10 +24,10 @@ import Icon from "./Icon.astro";
       size="2.5rem"
       gradient
     />
-    <h2>
-      <a href="#contact-cta">Consulting</a>
-    </h2>
-    <p>Providing expert advice to help you achieve your project goals.</p>
+    <h2>Consulting</h2>
+    <p class="link">
+      I want consulting <Icon icon="arrow-right" size="1em" />
+    </p>
   </div>
 </section>
 
@@ -53,13 +50,19 @@ import Icon from "./Icon.astro";
     font-size: var(--text-lg);
   }
 
-  .services a {
-    text-decoration: none; /* Remove underline by default */
-    color: inherit; /* Ensure the text color is inherited */
+  .link {
+    font-size: var(--text-lg);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
   }
 
-  .services a:hover {
-    text-decoration: underline; /* Underline on hover */
+  .link:hover {
+    text-decoration: underline;
+  }
+
+  .link:active {
+    color: var(--accent-regular);
   }
 
   @media (min-width: 50em) {
@@ -79,3 +82,12 @@ import Icon from "./Icon.astro";
     }
   }
 </style>
+
+<script>
+  const links = document.querySelectorAll(".link");
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      window.location.href = "#contact-cta"; // Redirect to contact form
+    });
+  });
+</script>

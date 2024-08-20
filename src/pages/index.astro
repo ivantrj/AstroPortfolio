@@ -36,13 +36,15 @@ const projects = (await getCollection("work"))
         >
           <div class="roles">
             <Pill><Icon icon="code" size="1.33em" /> Mobile Developer</Pill>
-            <Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
-            <Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
+            <Pill
+              ><Icon icon="pencil-line" size="1.33em" /> Content Creator</Pill
+            >
+            <Pill><Icon icon="code" size="1.33em" /> Indie Dev</Pill>
           </div>
         </Hero>
 
         <img
-          alt="Ivan smiling in a red plaid shirt"
+          alt="Ivan smiling in a blue shirt"
           width="480"
           height="620"
           src="/assets/portrait.jpg"
@@ -78,34 +80,48 @@ const projects = (await getCollection("work"))
         </div>
       </section>
 
-      <!-- <section class="section with-background bg-variant">
-        <header class="section-header stack gap-2 lg:gap-4">
-          <h3>Mentions</h3>
-          <p>
-            I have been fortunate enough to receive praise for my work in
-            several publications. Take a look below to learn more.
-          </p>
-        </header>
-
-        <div class="gallery">
-          <Grid variant="small">
-            {
-              [
-                "Medium",
-                "BuzzFeed",
-                "The Next Web",
-                "awwwards.",
-                "TechCrunch",
-              ].map((brand) => (
-                <li class="mention-card">
-                  <p>{brand}</p>
-                </li>
-              ))
-            }
-          </Grid>
-        </div>
+      <section class="working-process">
+        <h2>My Working Process</h2>
+        <ol>
+          <li>
+            <strong>You book a call with me</strong>
+            <p>
+              You will contact me and we will pick a date and time that fits
+              both of us. I will also send you a form with some basic questions.
+            </p>
+          </li>
+          <li>
+            <strong>We have a call</strong>
+            <p>
+              On the call (or meeting in person) you will present your vision,
+              what would you like to achieve. I will provide feedback taking
+              into account what is technically possible and what is not.
+            </p>
+          </li>
+          <li>
+            <strong>I prepare specification, time & price estimates</strong>
+            <p>
+              Based on the information you provided me so far I will create a
+              specification with time & price estimates.
+            </p>
+          </li>
+          <li>
+            <strong>I start working on your application</strong>
+            <p>
+              As soon as the contract is signed I will start working on the
+              application. During that time we will keep each other up to date
+              with regular meetings.
+            </p>
+          </li>
+          <li>
+            <strong>We deploy your application</strong>
+            <p>
+              When the application is finished and you are satisfied with the
+              result we will deploy the application.
+            </p>
+          </li>
+        </ol>
       </section>
-    </main> -->
 
       <ContactCTA />
     </main>
@@ -280,6 +296,39 @@ const projects = (await getCollection("work"))
 
     .service-card a:hover {
       text-decoration: underline; /* Underline on hover */
+    }
+
+    /* ====================================================== */
+
+    .working-process {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background-color: var(--gray-999_40);
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .working-process h2 {
+      font-size: var(--text-5xl);
+      color: var(--gray-0);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .working-process ol {
+      list-style: decimal;
+      padding-left: 1.5rem;
+    }
+
+    .working-process li {
+      margin-bottom: 1rem;
+      color: var(--gray-200);
+      font-size: var(--text-lg);
+    }
+
+    .working-process strong {
+      color: var(--accent-regular);
+      font-size: var(--text-lg);
     }
   </style>
 </BaseLayout>
